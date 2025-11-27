@@ -1,0 +1,55 @@
+const images = {
+  house1: new URL('../assets/Camps Bay A.jpg', import.meta.url).href,
+  house2: new URL('../assets/Mountain.jpeg', import.meta.url).href,
+  house3: new URL('../assets/bishop.avif', import.meta.url).href,
+  house4: new URL('../assets/blouberg.jpg', import.meta.url).href,
+  house5: new URL('../assets/Constantia.jpg', import.meta.url).href,
+}
+
+export default [
+  {
+    id: 1,
+    title: 'Seaside Apartment',
+    location: 'Camps Bay, Cape Town',
+    price: 3500,
+    type: 'Apartment',
+    available: true,
+    image: images.house1,
+  },
+  {
+    id: 2,
+    title: 'Mountain View Villa',
+    location: 'Table Mountain',
+    price: 5500,
+    type: 'Villa',
+    available: false,
+    image: images.house2,
+  },
+  {
+    id: 3,
+    title: 'Bishops Villa',
+    location: 'Bishopscourt',
+    price: 8500,
+    type: 'Villa',
+    available: true,
+    image: images.house3,
+  },
+  {
+    id: 4,
+    title: 'Oceanfront Studio',
+    location: 'Bloubergstrand',
+    price: 1800,
+    type: 'Studio',
+    available: true,
+    image: images.house4,
+  },
+  {
+    id: 5,
+    title: 'Suburban Dude',
+    location: 'Constantia',
+    price: 1000000,
+    type: 'House',
+    available: false,
+    image: images.house5,
+  },
+]
