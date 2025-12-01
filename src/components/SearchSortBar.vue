@@ -51,7 +51,6 @@ const localFavsOnly = computed({
     <div class="price-filter">
       <label>Price</label>
       <div class="inputs">
-        <!-- numeric inputs for precision -->
         <input type="number" v-model.number="localMin" min="0" placeholder="min" />
         <span class="dash">—</span>
         <input type="number" v-model.number="localMax" :min="localMin || 0" placeholder="max" />
@@ -74,8 +73,6 @@ const localFavsOnly = computed({
     </div>
   </div>
 </template>
-
-<!-- setup only; no extra script needed -->
 
 <style scoped>
 .search-sort {

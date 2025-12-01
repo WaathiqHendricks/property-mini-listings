@@ -15,12 +15,10 @@ const rangeMax = ref(1000)
 const favsOnly = ref(false)
 const view = ref('all')
 
-// Load bookmarks from localStorage
 onMounted(() => {
   const saved = localStorage.getItem('bookmarks')
   if (saved) bookmarks.value = JSON.parse(saved)
   const prices = properties.map(p => typeof p.price === 'number' ? p.price : Number(p.price) || 0)
-  // Set default price range to include all properties on initial load
   rangeMax.value = Math.max(...prices)
   minPrice.value = 0
   maxPrice.value = rangeMax.value
@@ -44,7 +42,6 @@ function clearFilters() {
   view.value = 'all'
 }
 
-// Keep view and favsOnly in sync: if user selects 'favs' view, turn favsOnly on
 watch(view, (v) => { favsOnly.value = (v === 'favs') })
 watch(favsOnly, (val) => { view.value = val ? 'favs' : 'all' })
 
@@ -115,7 +112,6 @@ const filtered = computed(() => filterAndSort(properties, {
   }
 }
 
-/* transition group animations for list sorting/filtering */
 .list-enter-from, .list-leave-to { opacity: 0; transform: translateY(8px) scale(.98) }
 .list-enter-active, .list-leave-active { transition: all 320ms cubic-bezier(.2,.8,.2,1) }
 .list-move { transition: transform 320ms cubic-bezier(.2,.8,.2,1) }
